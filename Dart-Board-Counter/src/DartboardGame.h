@@ -7,23 +7,32 @@
 class DartboardGame : public Game
 {
 private:
-
+    LiquidCrystal *lcd;
     bool lastTurn;
+
     int player1Score;
     int player2Score;
+    int gameState;
 
-    OneButton *stickButton;
+    int currentScoreSelection;
+
+    void handleShortPressStart(void *object);
 
 public:
-    DartboardGame(int startingCount, OneButton* stickButton);
+    DartboardGame(int startingCount, LiquidCrystal *Lcd);
     void Handler();
 
     void SetStartingCount(int count);
     void Player1Turn(int score);
     void Player2Turn(int score);
+
+    void HandleClick();
+    void HandleJoyStickUp();
+    void HandleJoyStickDown();
+    void HandleJoyStickLeft();
+    void HandleJoyStickRight();
+
     // ~DartboardGame();
 };
 
-
 #endif
-
