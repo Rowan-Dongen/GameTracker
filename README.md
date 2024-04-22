@@ -64,31 +64,32 @@ Write about setting up the working environment for your project.
 Add a file structure here with the basic details about files, below is an example.
 
 ```
-.
-├── assets
+DART-BOARD-COUNTER
+├── .pio
+│   └──PIO SETTINGS
+├── .vscode
+│   └──VSCODE SETTINGS
+├── include
+│   └──LIB FILES
+├── lib
+│   └── LIB FILES
+└── src
 │   ├── css
-│   │   ├── index-ui.css
-│   │   └── rate-ui.css
-│   ├── images
-│   │   ├── icons
-│   │   │   ├── shrink-button.png
-│   │   │   └── umbrella.png
-│   │   ├── logo_144.png
-│   │   └── Untitled-1.psd
-│   └── javascript
-│       ├── index.js
-│       └── rate.js
-├── CNAME
-├── index.html
-├── rate.html
-└── README.md
+│   ├──DartboardGame.cpp
+│   ├──DartboardGame.h
+│   ├──Game.cpp
+│   ├──Game.h
+│   ├──GamesEnum.h
+│   ├──pitches.h
+│   ├──main.cpp 
+│   └── rate-ui.css
+├──.gitignore
+├──.platformio.ini
 ```
 
 | No | File Name | Details 
 |----|------------|-------|
 | 1  | index | Entry point
-
- > If you are new to open-source, make sure to check read more about it [here](https://www.digitalocean.com/community/tutorial_series/an-introduction-to-open-source) and learn more about creating a pull request [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github).
 
 
  ### :cactus: Branches
