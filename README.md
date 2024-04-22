@@ -2,7 +2,7 @@ Author: Rowan Dongen
 - This is the repository for my embedded project.
   
 # Game Tracker
-The game tracker allowes you to track the score of games using an arduino and various sensors and actuators/displays.
+The game tracker allows you to track the score of various games using an arduino and various sensors and actuators/displays.
 
 
 # Currently supported games
