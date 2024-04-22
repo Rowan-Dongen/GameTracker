@@ -7,7 +7,8 @@
 - 
 
 # Currently supported games
-# Darts
+- Darts 🎯
+- Boxing bag timer 🥊👊⏲️
 
 # Follow along!
 -https://trello.com/b/Ju48PjNp/game-tracker
