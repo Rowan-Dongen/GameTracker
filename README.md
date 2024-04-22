@@ -21,7 +21,7 @@ The game tracker allows you to track the score of various games using an arduino
   - [Pre-Requisites](#notebook-pre-requisites)
   - [Developmen Environment](#nut_and_bolt-development-environment)
   - [File Structure](#file_folder-file-structure)
-  - [Build](#hammer-build)  
+  - [Hardware](#electric_plug-hardware)
   - [Deployment](#rocket-deployment)  
 - [Gallery](#camera-gallery)
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
