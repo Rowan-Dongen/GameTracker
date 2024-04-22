@@ -1,4 +1,4 @@
-- Author: Rowan Dongen
+Author: Rowan Dongen
 - This is the repository for my embedded project.
   
 # Game Tracker
