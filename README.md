@@ -33,7 +33,11 @@ Write about how to use this project.
 
 ###  :electric_plug: Installation
 - Steps on how to install this project, to use it.
-- Be very detailed here, For example, if you have tools which run on different operating systems, write installation steps for all of them.
+- Install PlatformIO for VSCode
+- Clone repository
+- Open repository directory as PlatformIO project in VSCode
+- Plug in device
+- Upload and monitor in PlatformIO
 
 ```
 $ add installations steps if you have to.
