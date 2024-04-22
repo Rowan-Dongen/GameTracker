@@ -1,32 +1,32 @@
-# Introduction
-- Add your project logo.
-- Write a short introduction to the project.
-- If you are using badges, add them here.
+- Author: Rowan Dongen
+- This is the repository for my embedded project.
+  
+# Game Tracker
+- The game tracker allowes you to track the score of games using an arduino and various sensors and actuators/displays
+- This 
+- 
+
+# Currently supported games
+# Darts
+
+# Follow along!
+-https://trello.com/b/Ju48PjNp/game-tracker
 
 ## :ledger: Index
 
 - [About](#beginner-about)
 - [Usage](#zap-usage)
   - [Installation](#electric_plug-installation)
-  - [Commands](#package-commands)
 - [Development](#wrench-development)
   - [Pre-Requisites](#notebook-pre-requisites)
   - [Developmen Environment](#nut_and_bolt-development-environment)
   - [File Structure](#file_folder-file-structure)
   - [Build](#hammer-build)  
   - [Deployment](#rocket-deployment)  
-- [Community](#cherry_blossom-community)
-  - [Contribution](#fire-contribution)
-  - [Branches](#cactus-branches)
-  - [Guideline](#exclamation-guideline)  
-- [FAQ](#question-faq)
-- [Resources](#page_facing_up-resources)
 - [Gallery](#camera-gallery)
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
-- [License](#lock-license)
 
 ##  :beginner: About
-Add a detailed introduction about the project here, everything you want the reader to know.
 
 ## :zap: Usage
 Write about how to use this project.
