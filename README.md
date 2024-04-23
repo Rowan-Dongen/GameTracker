@@ -89,7 +89,7 @@ DART-BOARD-COUNTER
 
 
  ### :cactus: Branches
-1. **`master`** is the development branch.
+1. **`main`** is the development branch.
 
 **Steps to work with feature branch**
 
