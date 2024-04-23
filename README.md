@@ -48,10 +48,10 @@ If you want other people to contribute to this project, hmu!
 
 ### :notebook: Pre-Requisites (Libraries)
 Following libraries installed using platformIO, are swapable, but you figure it out :)
-	arduino-libraries/LiquidCrystal@^1.0.7
-	Wire
-	gmarty2000/Joystick@^1.0.0
-	mathertel/OneButton@^2.5.0
+-arduino-libraries/LiquidCrystal@^1.0.7
+-Wire
+-gmarty2000/Joystick@^1.0.0
+-mathertel/OneButton@^2.5.0
 
 ###  :nut_and_bolt: Development Environment
 This project is built using Visual Studio Code and the PlatformIO extension for VScode.
