@@ -11,19 +11,18 @@ private:
     LiquidCrystal *lcd;
     bool lastTurn;
     bool lastWinner;
-
-    int player1Score;
-    int player2Score;
     int gameState;
 
-    int currentScoreSelection;
-
-    void handleShortPressStart(void *object);
-
+    unsigned int currentScoreSelection;
+    unsigned int startingScore;
+    unsigned int player1Score;
+    unsigned int player2Score;
 
     
-    void PlayWinningTune();
+    unsigned int player1Wins;
+    unsigned int player2Wins;
 
+    void PlayWinningTune();
 public:
     DartboardGame(int startingCount, LiquidCrystal *Lcd);
     void Handler();

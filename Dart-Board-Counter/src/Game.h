@@ -1,5 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
+#include <Arduino.h>
 #include <LiquidCrystal.h>
 
 class Game
@@ -15,6 +16,7 @@ public:
     virtual void HandleJoyStickDown() = 0;
     virtual void HandleJoyStickLeft() = 0;
     virtual void HandleJoyStickRight()= 0;
+    virtual void ResetGame() = 0;
 };
 
 #endif

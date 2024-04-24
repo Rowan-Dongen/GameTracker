@@ -3,6 +3,9 @@
 #include "pitches.h"
 DartboardGame::DartboardGame(int startingCount, LiquidCrystal *Lcd)
 {
+    player1Wins = 0;
+    player2Wins = 0;
+    int startingScore = startingCount;
     this->currentScoreSelection = 100;
     this->lcd = Lcd;
     gameState = 0;
@@ -11,7 +14,7 @@ DartboardGame::DartboardGame(int startingCount, LiquidCrystal *Lcd)
     this->lastTurn = false;
 }
 
-void DartboardGame::Handler()
+void DartboardGame::Handler() // Code to be run, per gamestate, loop.
 {
 
     switch (gameState)
@@ -36,30 +39,18 @@ void DartboardGame::Handler()
         lcd->setCursor(0, 1);
         lcd->print("P" + String(lastTurn + 1) + " Score" + String(currentScoreSelection) + "           ");
         break;
-
+    case 3:
+        lcd->setCursor(0, 0);
+        lcd->print("Player " + String((!lastTurn) + 1) + " Wins!!      ");
+        lcd->setCursor(0, 1);
+        lcd->print("Wins= p1-" + String(player1Wins) + " p2-" + String(player2Wins));
+        break;
     default:
         break;
     }
 }
 
-void DartboardGame::SetStartingCount(int count)
-{
-    return;
-}
-
-void DartboardGame::Player1Turn(int score)
-{
-    player1Score -= score;
-    // TODO handle busts and maybe calc possible wins
-}
-
-void DartboardGame::Player2Turn(int score)
-{
-    // TODO handle busts and maybe calc possible wins
-    player2Score -= score;
-}
-
-void DartboardGame::HandleClick()
+void DartboardGame::HandleClick() // Code to be run, per gamestate on joystick click event
 {
     switch (gameState)
     {
@@ -72,7 +63,6 @@ void DartboardGame::HandleClick()
         gameState = 2;
         break;
     case 2: // Selecting score
-        // TODO check which whose turn it is, select score
         if (lastTurn == false)
         {
             Player1Turn(currentScoreSelection);
@@ -82,31 +72,62 @@ void DartboardGame::HandleClick()
             Player2Turn(currentScoreSelection);
         }
         lastTurn = !lastTurn;
-        gameState = 2;
-
-        if (player1Score == 0)
-        {
-            PlayWinningTune();
-            gameState = 3;
-        }
-        if (player2Score == 0)
-        {
-            PlayWinningTune();
-            gameState = 3;
-        }
+        break;
     case 3:
-        lcd->setCursor(0, 0);
-        lcd->print("Player " + String((!lastTurn) + 1) + " Wins!!     ");
-        lcd->setCursor(0, 1);
-        lcd->print("                                ");
+        this->ResetGame();
         break;
     default:
         break;
     }
 }
 
+void DartboardGame::SetStartingCount(int count)
+{
+    return;
+}
+
+void DartboardGame::Player1Turn(int score)
+{
+    int currentScore = player1Score;
+
+    if ((currentScore - score) > 0)
+    {
+        player1Score -= score;
+    }
+
+    else if ((player1Score - score) == 0)
+    {
+        PlayWinningTune();
+        player1Wins++;
+        player1Score = startingScore;
+        gameState = 3;
+    }
+}
+
+void DartboardGame::Player2Turn(int score)
+{
+    int currentScore = player2Score;
+
+    if ((currentScore - score) > 0)
+    {
+        player2Score -= score;
+    }
+
+    else if ((player2Score - score) == 0)
+    {
+        PlayWinningTune();
+        player2Wins++;
+        player2Score = startingScore;
+        gameState = 3;
+    }
+}
+
 void DartboardGame::ResetGame()
 {
+    gameState = 0;
+    player1Score = 0;
+    player2Score = 0;
+    lcd->clear();
 }
 
 void DartboardGame::HandleJoyStickUp()
@@ -138,28 +159,15 @@ int noteDurations[] = {
 void DartboardGame::PlayWinningTune()
 {
 
-    // iterate over the notes of the melody:
-
     for (int thisNote = 0; thisNote < 8; thisNote++)
     {
-
-        // to calculate the note duration, take one second divided by the note type.
-
-        // e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-
         int noteDuration = 1000 / noteDurations[thisNote];
 
         tone(11, melody[thisNote], noteDuration);
 
-        // to distinguish the notes, set a minimum time between them.
-
-        // the note's duration + 30% seems to work well:
-
         int pauseBetweenNotes = noteDuration * 1.30;
 
         delay(pauseBetweenNotes);
-
-        // stop the tone playing:
 
         noTone(11);
     }
