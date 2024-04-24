@@ -2,9 +2,9 @@
 #define GAMES_ENUM_H
 #include <Arduino.h>
 
-#define NROFGAMES 2
-enum GameType {DartBoardGame, BoxingGame};
+#define NROFGAMES 4
+enum GameType {DartBoardGame, BoxingGame, Soon, Soon2};
 
-String gameNames[2] = {"DartGame", "Boxing Game"};
+String gameNames[NROFGAMES] = {"DartGame", "Boxing Game", "Coming Soon!", "Coming Soon 2!"};
 
 #endif

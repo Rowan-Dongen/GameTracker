@@ -4,6 +4,7 @@
 #include "Game.h"
 #include <OneButton.h>
 #include "Pitches.h"
+#include "LiquidCrystal.h"
 
 class DartboardGame : public Game
 {

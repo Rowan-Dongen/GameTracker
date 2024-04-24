@@ -6,6 +6,7 @@
 #include "OneButton.h"
 #include "GamesEnum.h"
 #include <fcntl.h>
+#include "BoxingBagTimer.h"
 
 byte newChar1[8] = {
     B00100,
@@ -73,21 +74,25 @@ int JoyStickHandler(int pin)
 
 void StickButtonClick(void *object)
 {
+  int selectedGame = gameSelection;
   switch (deviceState)
   {
   case 0: // Selcting game
-    switch (gameSelection)
+    switch (selectedGame)
     {
     case 0: //"Selected game 0"
       currentGame = new DartboardGame(301, lcd);
+      deviceState = 1;
+
       break;
     case 1: //"Selected game 1"
-      currentGame = new BoxingTimer();
+      currentGame = new BoxingBagTimer(lcd);
+      deviceState = 1;
+
       break;
     default:
       break;
     }
-    deviceState = 1;
     break;
   case 1: // Playing game
     currentGame->HandleClick();
@@ -107,7 +112,6 @@ unsigned long lastStickMeasurement = 0;
 unsigned long stickmeasurementInterval = 250;
 void HandleStick(int xPin, int yPin)
 {
-  Serial.println("cide is run");
   if (currentMillis < (lastStickMeasurement + stickmeasurementInterval))
   {
     return;
@@ -158,7 +162,7 @@ void HandleStick(int xPin, int yPin)
       return;
     }
     break;
-  default://DEFAULT
+  default: // DEFAULT
     break;
   }
 }
@@ -199,7 +203,7 @@ void loop()
     }
     break;
   case 1: // Ingame
-    currentGame->Handler(); 
+    currentGame->Handler();
     HandleStick(A0, A1);
     break;
   default:

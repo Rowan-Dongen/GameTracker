@@ -1,7 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 #include <Arduino.h>
-#include <LiquidCrystal.h>
 
 class Game
 {

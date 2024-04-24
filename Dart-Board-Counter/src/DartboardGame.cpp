@@ -5,7 +5,7 @@ DartboardGame::DartboardGame(int startingCount, LiquidCrystal *Lcd)
 {
     player1Wins = 0;
     player2Wins = 0;
-    int startingScore = startingCount;
+    startingScore = startingCount;
     this->currentScoreSelection = 100;
     this->lcd = Lcd;
     gameState = 0;
