@@ -44,7 +44,7 @@ $ - Upload and monitor in PlatformIO
 ```
 
 ##  :wrench: Development
-If you want other people to contribute to this project, hmu!
+If you want to contribute to this project, hmu!
 
 ### :notebook: Pre-Requisites (Libraries)
 Following libraries installed using platformIO, are swapable, but you figure it out :)
