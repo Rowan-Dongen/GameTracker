@@ -43,9 +43,6 @@ $ - Plug in device
 $ - Upload and monitor in PlatformIO
 ```
 
-##  :wrench: Development
-If you want to contribute to this project, hmu!
-
 ### :notebook: Pre-Requisites (Libraries)
 Following libraries installed using platformIO, are swapable, but you figure it out :)
 -arduino-libraries/LiquidCrystal@^1.0.7
@@ -82,23 +79,6 @@ DART-BOARD-COUNTER
 ├──.gitignore
 ├──.platformio.ini
 ```
-
-| No | File Name | Details 
-|----|------------|-------|
-| 1  | index | Entry point
-
-
- ### :cactus: Branches
-1. **`main`** is the development branch.
-
-**Steps to work with feature branch**
-
-1. To start working on a new feature, create a new branch prefixed with `feature/` and followed by feature name. (ie. `feature/FEATURE-NAME`)
-2. Once you are done with your changes, you can raise PR.
-
-### :exclamation: Guideline
-coding guidelines or other things you want people to follow should follow.
-
 ## 🖱️: Hardware
 - Arduino Uno
 - 16x2 LCD Display
@@ -107,12 +87,3 @@ coding guidelines or other things you want people to follow should follow.
 
 ##  🔌: Wiring
 <insert wiring diagram>
-
-##  :camera: Gallery
-<Pics>
-
-## :star2: Credit/Acknowledgment
-My momma!
-
-##  :lock: License
-Verified cool people license.TM
